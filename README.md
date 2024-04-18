@@ -14,7 +14,7 @@ I integrated the projects of many excellent plug-in makers into it to achieve a 
 
 At the same time, if you are from China, you can also easily find its installation and usage tutorials on my social account. I will publish the updated content and usage instructions of the roast duck Package on ([Bilibili](https://space.bilibili.com/679023184)). These are free projects, your support and attention are the inexhaustible motivation for my video and tutorial creation.
 
-用户守则
+#用户守则
 当你选择烤鸭包的时候，无论任何版本，默认你自愿遵守这个协议。
 
 **烤鸭包只建议用户购买正版游戏进行游玩体验，原因是多样性的，仅以此处规则为主要宗旨。**
