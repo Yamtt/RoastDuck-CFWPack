@@ -66,11 +66,11 @@
 
 ## 支持我们
 
-如果你喜欢我们的项目并想看到它不断进步，可以通过以下方式支持我们：
+如果你喜欢我们的项目并想看到它不断进步，你可以通过以下Ko-fi按钮对我们进行赞助：
 
-- 通过[Ko-fi](https://ko-fi.com/YourKoFiUsername)赞助我们
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M3P9CWM)
 
-你的支持极大鼓励了我们持续改进项目的动力。谢谢！
+你的支持极大地鼓励我们继续前进。非常感谢你的慷慨帮助！
 
 ## 联系方式
 
