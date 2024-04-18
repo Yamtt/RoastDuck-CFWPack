@@ -30,7 +30,7 @@
 2. 重启你的 Switch 进入自制模式。
 3. 在自制菜单中选择相应功能进行启动。
 
-更多信息，请访问我们的 [Bilibili频道](https://space.bilibili.com/679023184) 获取更新内容和使用教程。
+更多信息，请访问我们的 [BiliBili频道](https://space.bilibili.com/679023184) 获取更新内容和使用教程。
 
 ## 如何贡献
 
