@@ -48,7 +48,7 @@
 
 ## 许可证
 
-**RoastDuck CFWPack** 依据 MIT 许可证发布。有关许可证的完整条款，请查看 [LICENSE](LICENSE)。
+**RoastDuck CFWPack** 依据 GPL2.0 许可证发布。有关许可证的完整条款，请查看 [LICENSE](LICENSE)。
 
 ## 致谢
 
