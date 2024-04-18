@@ -53,7 +53,7 @@
 感谢社区成员以及所有支持 **RoastDuck CFWPack** 的人。我们特别感谢以下人员和项目为社区的贡献和热情：
 
 - [ppkantorski](https://github.com/ppkantorski)
-- [Cooler3D]([(https://github.com/rashevskyv/4IFIR))
+- [Cooler3D](https://github.com/rashevskyv/4IFIR)
 - [XorTroll](https://github.com/XorTroll)
 - ...
 
