@@ -1,1 +1,36 @@
+name: Update download counts
 
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天运行一次
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Fetch download counts
+        id: download_counts
+        run: echo "fetch_download_counts_script" # 在这里你应该调用一个脚本来获取下载次数
+
+      - name: Update README
+        run: |
+          DOWNLOAD_COUNTS=${{ steps.download_counts.outputs.counts }}
+          sed -i "s/原始下载计数徽章/![Downloads](https://img.shields.io/github/downloads/sskyNS/RoastDuck-CFWPack/total.svg)/g" README.md
+        # 上面的命令将替换README.md中的特定部分，请根据你的文件进行调整
+
+      - name: Commit and push if changed
+        run: |
+          # 设置Git的帐户
+          git config --global user.email "你的邮箱地址"
+          git config --global user.name "你的GitHub用户名"
+          # 检查是否有更改
+          git diff
+          git add README.md
+          git commit -m "Update download counts" || exit 0 # 如果没有变化则退出
+          git push
+        env:
+          # GITHUB_TOKEN是由GitHub提供给Actions使用的一个令牌
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
