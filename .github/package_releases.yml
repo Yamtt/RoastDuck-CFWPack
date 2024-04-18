@@ -6,24 +6,17 @@ jobs:
   download_releases:
     runs-on: ubuntu-latest
     steps:
-      # 下载其他仓库的最新发布文件
       - name: Download Latest Releases
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          # 指定要下载的仓库，格式为"用户名/仓库名"
-          # 注意替换为你想要下载资产的实际仓库
           repos: |
             ppkantorski/SampleRepo
             XorTroll/AnotherSampleRepo
-          # 此令牌用于GitHub API的认证，请确保它具有适当的权限
           token: ${{ secrets.GITHUB_TOKEN }}
-          # 将所有下载的文件放到此文件夹
           target_dir: 'downloads'
-      # 打包下载的文件
       - name: Archive Downloads
         run: |
           zip -r SD_Out.zip ./downloads
-      # 将打包的文件上传到工作流的构建产物
       - uses: actions/upload-artifact@v2
         with:
           name: SD-Package
