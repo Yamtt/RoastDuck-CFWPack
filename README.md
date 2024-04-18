@@ -6,6 +6,13 @@
 
 ![Downloads](https://img.shields.io/github/downloads/sskyNS/RoastDuck-CFWPack/total)
 
+## 支持我们
+
+如果你喜欢我们的项目并想看到它不断进步，可以通过以下方式支持我们：
+
+- 通过[Ko-fi](https://ko-fi.com/YourKoFiUsername)赞助我们
+
+你的支持极大鼓励了我们持续改进项目的动力。谢谢！
 
 **RoastDuck CFWPack** 是一个专为 Nintendo Switch 设备定制，整合了多个自制系统插件的中文 CFW Pack。旨在为修改过的 Switch 提供极致的日常游戏体验。
 
