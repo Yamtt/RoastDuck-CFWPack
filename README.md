@@ -3,7 +3,7 @@
 
 ![License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)
 
-![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/sskyNS/RoastDuck-CFWPack/releases/asset-name.svg)
+
 ![Downloads](https://img.shields.io/github/downloads/sskyNS/RoastDuck-CFWPack/total)
 
 
