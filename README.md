@@ -54,7 +54,6 @@
 
 - [ppkantorski](https://github.com/ppkantorski)
 - [XorTroll](https://github.com/XorTroll)
-- 
 - ...
 
 欢迎加入我们的社区来共同增进这个项目。
