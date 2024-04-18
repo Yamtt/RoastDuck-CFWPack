@@ -5,7 +5,6 @@
 
 **RoastDuck CFWPack** 是一个专为 Nintendo Switch 设备定制，整合了多个自制系统插件的中文 CFW Pack。旨在为修改过的 Switch 提供极致的日常游戏体验。
 
-![Roast Duck Banner](assets/121209531/35119f70-315a-4de5-b6c5-aee6e5cb277a.png)
 
 ## 特色
 
