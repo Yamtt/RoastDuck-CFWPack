@@ -1,7 +1,7 @@
 # RoastDuck CFWPack
 ![image](https://github.com/sskyNS/RoastDuck-CFWPack/assets/121209531/db431f1c-9b19-4406-b32d-10720a5ec886)
 
-![License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)
+![License](https://img.shields.io/badge/license-GPLv2.0-brightgreen.svg)
 
 
 ![Downloads](https://img.shields.io/github/downloads/sskyNS/RoastDuck-CFWPack/total)
