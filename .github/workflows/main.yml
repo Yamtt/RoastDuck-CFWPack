@@ -16,7 +16,7 @@ jobs:
       run: |
         DOWNLOAD_COUNT=$(curl -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
         https://api.github.com/repos/sskyNS/RoastDuck-CFWPack/releases | \
-        jq '[.[] | .assets[] | select(.name == "RoastDuck.zip").download_count] | add')
+        jq '[.[] | .assets[] | select(.name == "RDPv8.6.0.zip").download_count] | add')
         echo ::set-output name=count::$DOWNLOAD_COUNT
       
     - name: Update README.md
