@@ -4,21 +4,20 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
-jobs:
+yamljobs:
   update-counts:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-l
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v
 
-    - name: Fetch download counts
-      id: fetch_counts
+    - name: Fetch download
+      id: fetch
       run: |
-        DOWNLOAD_COUNT=$(curl -H "Authorization: token ${{ github_pat_11A44YFOY0KylidkdeYCuC_tF5hhmoCL3i2LXPO73kGMeEpzsDSVOdKtMTvyxxYjfOBTPPYJUn5GaTC7r }}" \
+        DOWNLOAD_COUNT=$(curl -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
         https://api.github.com/repos/sskyNS/RoastDuck-CFWPack/releases | \
         jq '[.[] | .assets[] | select(.name == "RDPv8.6.0.zip").download_count] | add')
-        echo ::set-output name=count::$DOWNLOAD_COUNT
-      
+        echo ::set-output name=count::$DOWNLOAD
     - name: Update README.md
       run: |
         sed -i "s/<!--download_count-->/Downloads: ${{ steps.fetch_counts.outputs.count }}/g" README.md
