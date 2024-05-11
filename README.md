@@ -9,7 +9,7 @@
 
 旨在为修改过的 Switch 提供极致的日常游戏体验。
 
-![3dgifmaker35384](https://github.com/sskyNS/RoastDuck-CFWPack/assets/121209531/cd06f112-140a-4018-b528-2af4ae76c147)
+                                                                ![3dgifmaker35384](https://github.com/sskyNS/RoastDuck-CFWPack/assets/121209531/cd06f112-140a-4018-b528-2af4ae76c147)
 
 
 
