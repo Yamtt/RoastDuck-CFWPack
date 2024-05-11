@@ -9,7 +9,7 @@
 
 旨在为修改过的 Switch 提供极致的日常游戏体验。
 
-![Ultrahand Logo](.pics/banner.gif)
+![Ultrahand Logo](.3dgifmaker35384.gif)
 
 
 ## 特色
