@@ -9,6 +9,8 @@
 
 旨在为修改过的 Switch 提供极致的日常游戏体验。
 
+![Ultrahand Logo](.pics/banner.gif)
+
 
 ## 特色
 
