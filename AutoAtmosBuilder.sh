@@ -29,7 +29,7 @@ if [ -e description.txt ]; then
 fi
 
 cd SwitchSD
-
+###
 ### Function to download and handle zip files
 download_and_unzip() {
   url=$1
