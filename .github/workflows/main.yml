@@ -1,18 +1,78 @@
-yamlname: Update Download Counton:
+name: AutoAtmosBuilder
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'README.md'
+      - 'AutoAtmosBuilder.sh'
   schedule:
-    - cron: '0 0 * * *'  # 每天UTC时间的午夜12点触
+    - cron: '28 23 * * *'  
+
+env:
+  SCRIPT_SH: AutoAtmosBuilder.sh
+  TZ: Asia/Shanghai
 
 jobs:
-  update_download_count:
-    runs-on: ubuntu-latest    steps:
-      - name: Check out
-        uses: actions/checkout@v
+  build:
+    runs-on: ubuntu-latest
 
-      - name: Update Download
-        run: |
-          TOKEN=$github_pat_11A44YFOY0KylidkdeYCuC_tF5hhmoCL3i2LXPO73kGMeEpzsDSVOdKtMTvyxxYjfOBTPPYJUn5GaTC7r          REPO=sskyNS/RoastDuck-CFWPack          DOWNLOAD_COUNT=$(curl -s "https://api.github.com/repos/$REPO/releases" | jq '.[] | .assets | .[] | .download_count' | awk '{s+=$1} END {print s}')
-          echo "Total download count: $DOWNLOAD_COUNT"
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git commit -am "Update download count to $DOWNLOAD_COUNT"
-          git push 
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Initialization environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq
+
+    - name: Build & Release
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        set -e
+        DATE=$(date "+%Y-%m-%d %H:%M:%S")
+        tag_name=$(date +%Y%m%d)
+        echo "DATE=$DATE" >> $GITHUB_ENV
+        echo "tag_name=$tag_name" >> $GITHUB_ENV
+        chmod +x $SCRIPT_SH
+        ./$SCRIPT_SH
+        zip -rq SwitchSD.zip SwitchSD
+
+    - name: Read description.txt
+      id: description
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./description.txt
+
+    - name: Create release
+      uses: ncipollo/release-action@v1
+      with:
+        name: ${{ env.DATE }} 
+        allowUpdates: true
+        tag: ${{ env.tag_name }}
+        commit: main
+        token: ${{ secrets.RELEASE_TOKEN }}
+        body: "${{ steps.description.outputs.content }}"
+        artifacts: "SwitchSD.zip"
+
+    - name: Remove old Releases
+      uses: dev-drprasad/delete-older-releases@v0.3.2
+      with:
+        keep_latest: 5
+        delete_tags: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+
