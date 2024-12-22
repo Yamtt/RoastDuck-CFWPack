@@ -162,4 +162,6 @@ tskin_rate_table_console = str!”[[-1000000, 28000, 0, 0], [28000, 42000, 0, 51
 tskin_rate_table_handheld = str!”[[-1000000, 28000, 0, 0], [28000, 42000, 0, 51], [42000, 48000, 51, 102], [48000, 55000, 102, 153], [55000, 60000, 153, 255], [60000, 68000, 255, 255]]”
 ENDOFFILE
 
+### Additional resources 等待补充
+
 echo "\033[32mYour Switch SD card is prepared! 烤鸭包的自动构建已经完成\033[0m"
