@@ -9,7 +9,7 @@ on:
       - 'README.md'
       - 'AutoAtmosBuilder.sh'
   schedule:
-    - cron: '28 23 * * *'  
+    - cron: '28 23 * * *'
 
 env:
   SCRIPT_SH: AutoAtmosBuilder.sh
@@ -41,6 +41,7 @@ jobs:
     - name: Build & Release
       env:
         DEBIAN_FRONTEND: noninteractive
+      shell: bash  # 使用 Bash 解释器
       run: |
         set -e
         DATE=$(date "+%Y-%m-%d %H:%M:%S")
@@ -75,4 +76,3 @@ jobs:
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-
