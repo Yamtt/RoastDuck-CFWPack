@@ -64,7 +64,7 @@ jobs:
         allowUpdates: true
         tag: ${{ env.tag_name }}
         commit: main
-        token: ${{ secrets.RELEASE_TOKEN }}
+        token: ${{ secrets.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 }}
         body: "${{ steps.description.outputs.content }}"
         artifacts: "SwitchSD.zip"
 
@@ -74,5 +74,5 @@ jobs:
         keep_latest: 5
         delete_tags: true
       env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.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 }}
 
