@@ -9,7 +9,7 @@ on:
       - 'README.md'
       - 'AutoAtmosBuilder.sh'
   schedule:
-    - cron: '28 23 * * *'
+    - cron: '28 23 * * *'  # 每天北京时间7:30（UTC时间23:30）触发
 
 env:
   SCRIPT_SH: AutoAtmosBuilder.sh
@@ -22,32 +22,21 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
       with:
-        python-version: '3.x'
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
-
+        ref: main
+    
     - name: Initialization environment
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y jq
-
-    - name: Build & Release
       env:
         DEBIAN_FRONTEND: noninteractive
-      shell: bash  # 使用 Bash 解释器
       run: |
-        set -e
-        DATE=$(date "+%Y-%m-%d %H:%M:%S")
-        tag_name=$(date +%Y%m%d)
-        echo "DATE=$DATE" >> $GITHUB_ENV
-        echo "tag_name=$tag_name" >> $GITHUB_ENV
+        sudo apt-get update
+        sudo -E apt install -y jq
+    
+    - name: "Build & Release"
+      run: |
+        set -e  # 出错时终止
+        echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
+        echo "tag_name=$(date +%Y%m%d)" >> $GITHUB_ENV
         chmod +x $SCRIPT_SH
         ./$SCRIPT_SH
         zip -rq SwitchSD.zip SwitchSD
