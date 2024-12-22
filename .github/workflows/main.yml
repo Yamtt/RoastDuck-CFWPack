@@ -1,4 +1,9 @@
 name: AutoAtmosBuilder
+- name: Build & Release
+  shell: bash  # 使用 Bash 解释器
+  run: |
+    set -e
+    ./AutoAtmosBuilder.sh
 
 on:
   workflow_dispatch:
